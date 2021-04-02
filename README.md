@@ -2,6 +2,7 @@
 
 Move to directory mssql
 - docker-compose ps
-- docker-compose logs mssql-server-db
+- docker-compose logs sql-server-db
 - docker-compose up -d
 - docker-compose down
+- docker exec -it sql-server-db "bash"
