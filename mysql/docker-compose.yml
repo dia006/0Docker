@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  mysql-docker:
+    image: mysql/mysql-server:8.0
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: frontiera
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./frontiera.sql:/docker-entrypoint-initdb.d/frontiera.sql"
+      
+  adminer:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql-docker
+    ports:
+      - "8080:8080"

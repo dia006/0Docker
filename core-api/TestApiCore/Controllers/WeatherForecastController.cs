@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace TestApiCore.Controllers
 {
+    // [RoutePrefix("api")]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -24,6 +25,7 @@ namespace TestApiCore.Controllers
         }
 
         [HttpGet]
+        [Route("WeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -34,6 +36,13 @@ namespace TestApiCore.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        [Route("Pippo")]
+        public bool Pippo()
+        {
+            return(true);
         }
     }
 }
