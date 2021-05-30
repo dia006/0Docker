@@ -8,3 +8,5 @@ services:
         environment:
             SA_PASSWORD: "password"
             ACCEPT_EULA: "Y"
+        volumes:
+            - "./db.sql:/opt/mssql/bin/sqlservr/db.sql"
