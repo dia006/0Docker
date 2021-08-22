@@ -3,6 +3,7 @@ services:
         image: mongo:latest
         container_name: mongodb
         hostname: mongodb
+        # restart: unless-stopped
         volumes:
             - ./mongodb/mongod.conf:/etc/mongod.conf
             - ./mongodb/initdb.d/:/docker-entrypoint-initdb.d/
