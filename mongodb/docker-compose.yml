@@ -6,8 +6,8 @@ services:
         volumes:
             - ./mongodb/mongod.conf:/etc/mongod.conf
             - ./mongodb/initdb.d/:/docker-entrypoint-initdb.d/
-            - ./mongodb/data/db/:/data/db/
-            - ./mongodb/data/log/:/var/log/mongodb/
+            # - ./mongodb/data/db/:/data/db/
+            # - ./mongodb/data/log/:/var/log/mongodb/
         env_file:
             - .env
         environment:
